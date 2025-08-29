@@ -1,0 +1,802 @@
+.bandeau-photo, .container-nav, .container-footer {
+    display: none;
+}
+
+/* ---- HEADER MOBILE & TABLETTE ---- */
+.nav-h-mob {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(119, 173, 49);
+    padding: 10px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    z-index: 1000;
+}
+
+.nav-h-mob i {
+    font-size: 34px;
+    cursor: pointer;
+    background-color: rgb(119, 173, 49);
+    color:rgb(65, 65, 65);
+}
+
+.nav-h-btn, .nav-h-btn-profil {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.nav-h-mob p, .nav-h-btn-profil p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Menu déroulant - Profil*/
+.profil-mob-deroulant {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    padding: 15px;
+    text-align: left;
+    background-color: rgb(119, 173, 49);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 650;
+    border-radius: 5px;
+    border: solid black 2px;
+    border-bottom: 1px solid black
+}
+
+.mob-deroulage {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mob-deroulage a {
+    display: block;
+    text-decoration: none;
+    color:  rgb(65, 65, 65);
+}
+.mob-deroulage a:hover {
+    text-decoration: none;
+    color: rgb(230, 250, 175);
+}
+
+.mob-deroulage li {
+    padding: 10px 0;
+    border-bottom: black solid 2px;
+}
+
+.mob-deroulage li:last-child {
+    border-bottom: none; /* pas de trait après le dernier élément */
+}
+
+/* ---- NAVIGATEUR BAS MOBILE & TABLETTE ---- */
+.nav-b-mob {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(119, 173, 49);
+    border-top: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    border-top: black 2px solid;
+}
+
+.nav-b-mob i {
+    font-size: 34px;
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+}
+
+.nav-b-btn {
+    border: none;
+    background-color: rgb(119, 173, 49);
+}
+
+/* ---- NAVIGATEUR WEB ---- */
+.nav-web {
+    display: none; /* cachée par défaut, visible en desktop */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-web i {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-web-btn, .nav-web-btn-profil {
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 15px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.nav-web-btn i, .nav-web-btn-profil i {
+    font-size: 40px; /* adapte à ton design */
+}
+
+/* BODY */
+
+main {
+    width: 100%;
+    min-height: 100%;
+    margin-top: 3rem;
+    overflow-x: hidden;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+}
+
+.card-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 70%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.card-titre {
+    text-align: center;
+    color: rgb(119, 173, 49);
+    font-weight: bold;
+    font-size: 36px;
+    margin: 10px;
+}
+
+
+.logo-eco {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;  /* Conserve les proportions & évite que l'image dépasse */
+    border-radius: 150px;
+}
+
+/*Style du bouton*/
+.bouton-creation, .bouton-connexion {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #fcfcfc;
+    border-radius: 15px;
+    background-color: rgb(119, 173, 49);
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    gap: 10px;
+}
+
+.submit-connexion, .submit-compte {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(119, 173, 49);
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    gap: 10px;
+}
+
+.formulaire-creation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oublie-mdp, .submit-reinitialiser {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto; /* centré horizontalement */
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(119, 173, 49);
+    color: rgb(25, 36, 18);
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-creation {
+    background-color: rgb(119, 173, 49);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 8px;
+    margin-top: 8px;
+    border: 2px solid rgb(119, 173, 49);
+    border-radius: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Formulaire : créer un compte*/
+.formulaire-creation h4 {
+    font-size: 20px;
+    color: rgb(82, 82, 82);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Formulaire création de compte */ 
+
+.formulaire-creation form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem; /* espace entre les catégories */
+    color: rgb(65, 65, 65);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Groupes label + input bien espacés */
+.formulaire-creation form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem; /* espace plus petit entre label et champ */
+}
+
+/* Labels */
+.formulaire-creation label {
+    color: rgb(119, 173, 49);
+    font-weight: 650;
+}
+
+/* Champs */
+.formulaire-creation input[type="text"],
+.formulaire-creation input[type="tel"],
+.formulaire-creation input[type="email"],
+.formulaire-creation input[type="password"],
+.formulaire-creation select {
+    border: 1px solid rgb(65, 65, 65);
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: rgb(65, 65, 65);
+}
+
+/* Radios */
+.genre {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Langue */
+.langue {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.bouton-creation:hover,
+.submit-creation:hover,
+.bouton-connexion:hover,
+.submit-connexion:hover,
+.oublie-mdp:hover,
+.submit-reinitialiser:hover {
+    background-color: rgb(136, 197, 57);
+}
+
+/*Formulaire connexion*/
+
+.formulaire-connexion h6 {
+    font-size: 20px; 
+    color: rgb(82, 82, 82);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.formulaire-connexion form {
+    padding: 10px;
+}
+
+/*Formulaire mot de passe oublié*/
+.formulaire-oublie label {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    color: rgb(61, 61, 61);
+    margin-top: 15px;
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 1024px ) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        overflow-x: hidden;
+    }
+
+/* cache le nav mobil*/
+    .nav-h-mob,
+    .nav-b-mob {
+        display: none;
+    }
+
+    .container-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 10px;
+        margin-top: 0.2rem;
+        width: 100%;
+        height: 15%;
+        background-color: rgb(119, 173, 49);
+    }
+
+    .logo-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        margin-left: 4rem;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+        border-radius: 55px;
+    }
+
+    .text-titre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 0;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+/*liens barre de navigation*/ 
+    .lien-nav {
+        display: flex;
+        list-style: none;
+        width: 60%;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        margin: 0; 
+    }
+
+    .accueil, .trajet,
+    .connexion, .contact {
+        display: flex;
+        justify-content: center;
+        width: 12rem;
+        gap: 1rem;
+    }
+
+    .accueil a, .trajet  a,
+    .connexion a, .contact a {
+        position: relative;
+        color: white;
+        text-decoration: none;
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    } 
+
+    .accueil a:hover, .trajet a:hover,
+    .connexion a:hover, .contact a:hover {
+        text-decoration: none;
+        color: rgb(230, 250, 175);
+    }
+
+/* Soulignement pour "accueil" */ 
+    .souligne-accueil {
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: rgb(230, 250, 175);
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+
+    .lien-nav li:hover .souligne-accueil {
+        width: 100%;
+        left: 0;
+    }
+
+/* Soulignement pour "trajet"*/
+    .souligne-trajet {
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: rgb(230, 250, 175);
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+
+    .lien-nav li:hover .souligne-trajet {
+        width: 100%;
+        left: 0;
+    }
+
+/*Soulignement pour "connexion" */
+    .souligne-connexion {
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: rgb(230, 250, 175);
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+
+    .lien-nav li:hover .souligne-connexion {
+        width: 100%;
+        left: 0;
+    }
+
+/*Soulignement pour "contact" */
+    .souligne-contact {
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: rgb(230, 250, 175);
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;    
+    }
+
+    .lien-nav li:hover .souligne-contact {
+        width: 100%;
+        left: 0;
+    }
+
+    .bandeau-photo {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(255, 255, 255);
+        padding-top: 0.3rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .img-bandeau img {
+        width: 100vw;
+        max-height: 400px;
+        object-fit: cover; /* Coupe propre les images si besoin */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* MAIN */
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .card-page {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 10px;
+    }
+
+    .card-page img {
+        width: 50%;
+        height: 50%;
+        padding: 3rem;
+        border-right: rgb(119, 173, 49)3px dashed;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+
+    .logo-eco {
+        width: 70%;
+        padding: 3rem;
+    }
+
+    .card-titre {
+        text-align: center;
+        color: rgb(119, 173, 49);
+        font-weight: 600;
+        font-size: 36px;
+        margin: 10px;
+    }
+
+    .bouton-creation, .bouton-connexion {
+        width: 250px;
+        height: 45px;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #fcfcfc;
+        border-radius: 15px;
+        background-color: rgb(119, 173, 49);
+        color: rgb(245, 245, 245);
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        gap: 10px;
+    }
+
+    .submit-connexion, .submit-creation {
+        width: 100%;
+        height: 45px;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 15px;
+        background-color: rgb(119, 173, 49);
+        color: rgb(245, 245, 245);
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .formulaire-creation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .oublie-mdp, .submit-reinitialiser {
+        display: block;
+        width: 90%;
+        padding: 10px;
+        margin: 10px auto; /* centré horizontalement */
+        border: none;
+        border-radius: 15px;
+        background-color: rgb(119, 173, 49);
+        color: rgb(65, 65, 65);
+        font-weight: 500;
+        cursor: pointer;
+        text-align: center;
+    }
+
+/* Formulaire création de compte */ 
+
+    .formulaire-creation form {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem; /* espace entre les catégories */
+        color: rgb(65, 65, 65);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+/* Groupes label + input bien espacés */
+    .formulaire-creation form > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem; /* espace plus petit entre label et champ */
+    }
+
+/* Labels */
+    .formulaire-creation label {
+        color: rgb(119, 173, 49);
+        font-weight: 650;
+    }
+
+/* Champs */
+    .formulaire-creation input[type="text"],
+    .formulaire-creation input[type="tel"],
+    .formulaire-creation input[type="email"],
+    .formulaire-creation input[type="password"],
+    .formulaire-creation select {
+        border: 1px solid rgb(65, 65, 65);
+        border-radius: 4px;
+        font-size: 1rem;
+        padding: 0.5rem;
+        color: rgb(65, 65, 65);
+    }
+
+/* Radios */
+    .genre {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem; /* petit espace entre label et options */
+    }
+
+    .radio-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; /* espace entre la case et le texte */
+    }
+
+/* Langue */
+    .langue {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .bouton-creation:hover,
+    .submit-creation:hover,
+    .bouton-connexion:hover,
+    .submit-connexion:hover,
+    .oublie-mdp:hover,
+    .submit-reinitialiser:hover {
+        background-color: rgb(136, 197, 57);
+    }
+
+/* FOOTER */
+
+    .container-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        background-color: rgb(119, 173, 49);
+        margin-top: 2rem;
+    }
+
+    .all-cadre {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .cadre-footer-1, .cadre-footer-2, .logo-footer {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.2rem;
+        margin: 1rem;
+        width: 25%;
+        text-align: center;
+    }
+
+    .contact-footer li {
+        list-style: none;
+    }
+
+    .logo-footer img {
+        width: 120px;
+        height: 120px;
+        border-radius: 75px;
+        margin: 5px;
+    }
+
+    .cadre-footer-1 a {
+        color: rgb(230, 250, 175);
+        display: inline-block;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .cadre-footer-1 a:hover {
+        transform: scale(1.2);
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+    .cadre-footer-2 li {
+        color: rgb(230, 250, 175);
+        font-size: 1rem;
+    }
+
+    .bi-telephone-fill, .bi-envelope {
+        display: inline-block;
+        font-size: 1.8rem;
+        color: rgb(65, 65, 65);
+        transition: transform 0.3s ease;
+    }
+
+    .telephone, .mail {
+        display: inline-block;
+        transition: transform 0.3s ease
+    }
+
+    .telephone:hover, .mail:hover {
+        transform: scale(1.1);
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Connexion / Inscription</title>
+            <link rel="stylesheet" href="/css/connexion-inscription.css">
+                <!-- Lien vers Bootstrap Icons -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+                <!--Intégrer la carte en CSS-->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+                <!--Intégrer la carte en JS-->
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                <!--Routing  machine CSS-->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"/>
+        </head>
+        <body>
+
+        <!-- Barre de navigation mobile/tablette (haut) -->
+            <nav class="nav-h-mob">    
+                <button class="nav-h-btn-profil"><i class="bi bi-plus-circle-fill"></i></button>
+                <!-- Menu déroulant quand on clique sur le cercle + -->
+                <div class="profil-mob-deroulant" id="profil-menu">
+                    <ul class="mob-deroulage">
+                        <li><a href="/html/mention.html">Mentions légales</a></li>
+                        <li><a href="/html/historique-conducteur.html">Historique conducteur</a></li>
+                        <li><a href="/html/historique.html">Historique passager</a></li>
+                    </ul>
+                </div>
+        
+                <a href="/html/connexion-inscription.html" class="nav-h-btn">
+                    <i class="bi bi-person-fill"></i>
+            </nav>
+
+            <!--Barre de navigation WEB-->
+            <nav class="container-nav">
+                <div class="logo-text">
+                    <div class="logo">
+                        <a href="/html/index.html">
+                        <img src="/img/arbre.jpg" alt="Logo">
+                        </a>
+                    </div>
+                        <p class="text-titre">EcoVoit'</p>
+                </div>
+
+                <ul class="lien-nav">
+
+                    <li class="accueil">
+                        <a href="/html/index.html">
+                            Accueil
+                            <div class="souligne-accueil"></div>
+                        </a>
+                    </li>
+                        
+                    <li class="trajet">
+                        <a href="/html/recherche.html">
+                            Trouver un trajet
+                            <div class="souligne-trajet"></div>
+                        </a>                        
+                    </li>
+
+                    <li class="connexion">
+                        <a href="/html/connexion-inscription.html">
+                            Se connecter
+                            <div class="souligne-connexion"></div>
+                        </a>                        
+                    </li>
+
+                    <li class="contact">
+                        <a href="#">
+                            Contact
+                            <div class="souligne-contact"></div>
+                        </a>
+                    </li>
+                </ul>                
+            </nav>
+
+            <section class="bandeau-photo">
+                <div class="img-bandeau">
+                    <img src="/img/route-2.jpg" alt="Trajet écoresponsable">
+                </div>
+            </section>
+
+            <!--BODY-->
+            <main>
+                <div class="page">
+                    <div class="card-page">
+                    <img src="/img/arbre.jpg" class="logo-eco" alt="Logo EcoVoit">
+                        <div class="card-body">
+                            <h5 class="card-titre">EcoVoit'</h5>
+                
+
+                            <!-- Boutons pour choisir l'action -->
+                            <button class="bouton-creation" id="bouton-creation">Créer un compte</button>
+                            
+
+                            <!-- Formulaire CREER UN COMPTE -->
+                            <div class="formulaire-creation" id="formulaire-creation" style="display:none;">
+                                <h4>Créer un compte</h4>
+                                <form action="/html/index.html" method="post">
+
+                                   <div class="nom">
+                                        <label for="nom">Nom</label> 
+                                        <input type="text" id="nom" name="nom" required>
+                                    </div>
+
+                                    <div class="prenom">
+                                        <label for="prenom">Prénom</label>
+                                        <input type="text" id="prenom" name="prenom" required>
+                                    </div>
+
+                                    <div class="genre">
+                                        <label for="genre">Sexe</label>
+                                        <div class="radio-group">
+                                            <input type="radio" id="homme" name="genre" value="H"> Homme<br>
+                                        </div>
+                            
+                                        <div class="radio-group">
+                                            <input type="radio" id="femme" name="genre" value="F"> Femme<br>
+                                        </div>                                                                               
+                                    </div>
+
+                                    <div class="telephone-form">
+                                        <label for="telephone">N° téléphone</label>
+                                        <input type="tel" id="telephone" name="telephone" pattern="^0[1-9]\d{8}$" required>
+                                    </div>
+
+                                    <div class="mail-form">
+                                        <label for="email">E-mail</label>
+                                        <input type="email" id="email" name="email">
+                                    </div>
+
+                                    <div class="mdp-form">
+                                        <label for="password">Mot de passe</label>
+                                        <input type="password" id="password" name="password" class="form-mdp" placeholder="Mot de passe" required>
+                                    </div>
+
+                                    <div class="langue">
+                                        <label for="langue-select">Langue parlée :</label>
+                                        <select class="form-langue" aria-label="Default select example">                                            
+                                            <option selected>Selectionnez une langue...</option>
+                                            <option value="1">Français</option>
+                                            <option value="2">Anglais</option>
+                                            <option value="3">Arabe</option>
+                                            <option value="4">Néerlandais</option>
+                                            <option value="5">Espagnol</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="submit-creation">C'est parti !</button>
+                                </form>
+                            </div>
+
+                            <!-- Formulaire SE CONNCTER -->
+                            <button class="bouton-connexion" id="bouton-connexion">Se connecter</button>
+                            <div class="formulaire-connexion" id="formulaire-connexion" style="display:none;">
+                                <h6>Se connecter</h6>
+                                <form action="/html/profil-user.html" method="post">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                    <input type="password" class="form-control" placeholder="Mot de passe" required>
+                                    <button type="submit" class="submit-connexion">Se connecter</button>
+                                </form>
+                                <!-- Bouton MDP oublié dans la section connexion -->
+                                <button id="oublie-mdp" class="oublie-mdp">Mot de passe oublié ?</button>
+                            </div>
+
+                            <!-- Formulaire mot de passe oublié -->
+                            <div class="formulaire-oublie" id="formulaire-oublie" style="display:none;">
+                            <form>
+                                <label for="email">Un Email de réinitialisation vous sera envoyé</label>
+                                <input type="email" class="form-control" placeholder="Email" required>
+                                <button type="submit" class="submit-reinitialiser">Réinitialiser le mot de passe</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!--Barre de navigation BAS mobile / Tablette-->
+            <nav class="nav-b-mob">
+                <a href="/html/recherche.html" class="nav-b-btn"><i class="bi bi-search"></i></a>
+                <a href="/html/proposition-trajet.html" class="nav-b-btn"><i class="fas fa-road"></i></a>
+            </nav>
+
+            <!-- FOOTER-->
+            <footer>
+                <div class="container-footer">
+                    <div class="all-cadre">
+                        <section class="cadre-footer-1">
+                            <a href="/html/mention.html" class="small-text-footer"> Mentions Légales </a>                    
+                        </section>
+
+                        <section class="cadre-footer-2">
+                            <ul class="contact-footer">
+                                <li class="telephone">
+                                    <i class="bi bi-telephone-fill"></i>
+                                    06 34 48 41 06
+                                </li>
+                                <li class="mail">
+                                    <i class="bi bi-envelope"></i>
+                                    ecovoit.test@gmail.com
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="logo-footer">
+                            <img src="/img/arbre.jpg" alt="logo">
+                        </section>
+                    </div>
+                </div>
+            </footer>
+        <script src="/js/connexion-inscription.js"></script>
+        <script src="/js/navigation.js"></script>
+        <script src="/js/inscription.js"></script>
+        <script src="/js/connexion.js"></script>
+        </body>
+    </html>

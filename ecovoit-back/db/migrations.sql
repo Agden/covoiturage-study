@@ -1,0 +1,21 @@
+-- Table des utilisateurs
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  firstname TEXT NOT NULL,
+  lastname TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table des trajets
+CREATE TABLE IF NOT EXISTS trips (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  driver_id INTEGER NOT NULL,
+  origin TEXT NOT NULL,
+  destination TEXT NOT NULL,
+  date TEXT NOT NULL,
+  seats INTEGER NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (driver_id) REFERENCES users(id) ON DELETE CASCADE
+);
