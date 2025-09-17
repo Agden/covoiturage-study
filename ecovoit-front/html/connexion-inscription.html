@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Connexion / Inscription</title>
-            <link rel="stylesheet" href="/ecovoit-front/css/connexion-inscription.css">
+            <link rel="stylesheet" href="../css/connexion-inscription.css">
                 <!-- Lien vers Bootstrap Icons -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
@@ -25,22 +25,23 @@
                 <!-- Menu déroulant quand on clique sur le cercle + -->
                 <div class="profil-mob-deroulant" id="profil-menu">
                     <ul class="mob-deroulage">
-                        <li><a href="/ecovoit-front/html/mention.html">Mentions légales</a></li>
-                        <li><a href="/ecovoit-front/html/historique-conducteur.html">Historique conducteur</a></li>
-                        <li><a href="/ecovoit-front/html/historique.html">Historique passager</a></li>
+                        <li><a href="../html/mention.html">Mentions légales</a></li>
+                        <li><a href="../html/historique-conducteur.html">Historique conducteur</a></li>
+                        <li><a href="../html/historique.html">Historique passager</a></li>
                     </ul>
                 </div>
         
-                <a href="/ecovoit-front/html/connexion-inscription.html" class="nav-h-btn">
-                    <i class="bi bi-person-fill"></i></a>
+                <a href="../html/connexion-inscription.html" class="nav-h-btn">
+                    <i class="bi bi-person-fill"></i>
+                </a>
             </nav>
 
             <!--Barre de navigation WEB-->
             <nav class="container-nav">
                 <div class="logo-text">
                     <div class="logo">
-                        <a href="/ecovoit-front/html/index.html">
-                        <img src="/ecovoit-front/img/arbre.jpg" alt="Logo">
+                        <a href="../index.html">
+                        <img src="../img/arbre.jpg" alt="Logo">
                         </a>
                     </div>
                         <p class="text-titre">EcoVoit'</p>
@@ -49,28 +50,28 @@
                 <ul class="lien-nav">
 
                     <li class="accueil">
-                        <a href="/ecovoit-front/html/index.html">
+                        <a href="../index.html">
                             Accueil
                             <div class="souligne-accueil"></div>
                         </a>
                     </li>
                         
                     <li class="trajet">
-                        <a href="/ecovoit-front/html/recherche.html">
+                        <a href="../html/recherche.html">
                             Trouver un trajet
                             <div class="souligne-trajet"></div>
                         </a>                        
                     </li>
 
                     <li class="connexion">
-                        <a href="/ecovoit-front/html/connexion-inscription.html">
+                        <a href="../html/connexion-inscription.html">
                             Se connecter
                             <div class="souligne-connexion"></div>
                         </a>                        
                     </li>
 
                     <li class="contact">
-                        <a href="/ecovoit-front/html/contact.html">
+                        <a href="../html/contact.html">
                             Contact
                             <div class="souligne-contact"></div>
                         </a>
@@ -80,7 +81,7 @@
 
             <section class="bandeau-photo">
                 <div class="img-bandeau">
-                    <img src="/ecovoit-front/img/route-2.jpg" alt="Trajet écoresponsable">
+                    <img src="../img/route-2.jpg" alt="Trajet écoresponsable">
                 </div>
             </section>
 
@@ -88,7 +89,7 @@
             <main>
                 <div class="page">
                     <div class="card-page">
-                    <img src="/ecovoit-front/img/arbre.jpg" class="logo-eco" alt="Logo EcoVoit">
+                    <img src="../img/arbre.jpg" class="logo-eco" alt="Logo EcoVoit">
                         <div class="card-body">
                             <h5 class="card-titre">EcoVoit'</h5>
                 
@@ -100,7 +101,7 @@
                             <!-- Formulaire CREER UN COMPTE -->
                             <div class="formulaire-creation" id="formulaire-creation" style="display:none;">
                                 <h4>Créer un compte</h4>
-                                <form action="/ecovoit-front/html/index.html" method="post">
+                                <form action="../index.html" method="post">
 
                                    <div class="nom">
                                         <label for="nom">Nom</label> 
@@ -157,10 +158,10 @@
                             <button class="bouton-connexion" id="bouton-connexion">Se connecter</button>
                             <div class="formulaire-connexion" id="formulaire-connexion" style="display:none;">
                                 <h6>Se connecter</h6>
-                                <form action="/ecovoit-front/html/profil-user.html" method="post">
+                                <form action="../html/profil-user.html" method="post">
                                     <input type="email" id="email-connexion" name="email" class="form-control" placeholder="Email" required>
-  <input type="password" id="password-connexion" name="password" class="form-control" placeholder="Mot de passe" required>
-  <button type="submit" class="submit-connexion">Se connecter</button>
+                                    <input type="password" id="password-connexion" name="password" class="form-control" placeholder="Mot de passe" required>
+                                    <button type="submit" class="submit-connexion">Se connecter</button>
                                 </form>
                                 <!-- Bouton MDP oublié dans la section connexion -->
                                 <button id="oublie-mdp" class="oublie-mdp">Mot de passe oublié ?</button>
@@ -181,8 +182,8 @@
 
             <!--Barre de navigation BAS mobile / Tablette-->
             <nav class="nav-b-mob">
-                <a href="/ecovoit-front/html/recherche.html" class="nav-b-btn"><i class="bi bi-search"></i></a>
-                <a href="/ecovoit-front/html/proposition-trajet.html" class="nav-b-btn"><i class="fas fa-road"></i></a>
+                <a href="../html/recherche.html" class="nav-b-btn"><i class="bi bi-search"></i></a>
+                <a href="../html/proposition-trajet.html" class="nav-b-btn"><i class="fas fa-road"></i></a>
             </nav>
 
             <!-- FOOTER-->
@@ -190,7 +191,7 @@
                 <div class="container-footer">
                     <div class="all-cadre">
                         <section class="cadre-footer-1">
-                            <a href="/ecovoit-front/html/mention.html" class="small-text-footer"> Mentions Légales </a>                    
+                            <a href="../html/mention.html" class="small-text-footer"> Mentions Légales </a>                    
                         </section>
 
                         <section class="cadre-footer-2">
@@ -207,15 +208,14 @@
                         </section>
 
                         <section class="logo-footer">
-                            <img src="/ecovoit-front/img/arbre.jpg" alt="logo">
+                            <img src="../img/arbre.jpg" alt="logo">
                         </section>
                     </div>
                 </div>
             </footer>
-        <script src="../js/navigation.js"></script>
-        <script src="../js/inscription.js"></script>
-
-        <script src="../js/connexion-inscription.js"></script>
-        <script src="../js/menu-deroulant.js"></script>
+        <script src="../js/navigation.js" defer></script>
+        <script src="../js/inscription.js" defer></script>
+        <!--<script src="../js/connexion-inscription.js"></script>-->
+        <script src="../js/menu-deroulant.js" defer></script>
         </body>
     </html>

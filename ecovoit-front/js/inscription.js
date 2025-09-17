@@ -1,64 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const formCreation  = document.querySelector("#formulaire-creation form, #formulaire-creation");
-  const formConnexion = document.querySelector("#formulaire-connexion form, #formulaire-connexion");
-  const getCreationData = () => {
-    const root = formCreation;
-    return {
-      nom:      root?.querySelector('input[name="nom"], #nom')?.value?.trim(),
-      email:    root?.querySelector('input[name="email"], #email')?.value?.trim(),
-      password: root?.querySelector('input[name="password"], #password')?.value
-    };
+  // Boutons
+  const btnCreation  = document.getElementById("bouton-creation");
+  const btnConnexion = document.getElementById("bouton-connexion");
+  const btnOublie    = document.getElementById("oublie-mdp");
+
+  // Panneaux
+  const panelCreation  = document.getElementById("formulaire-creation");
+  const panelConnexion = document.getElementById("formulaire-connexion");
+  const panelOublie    = document.getElementById("formulaire-oublie");
+
+  // Sécurité si des IDs manquent
+  if (!panelCreation || !panelConnexion || !panelOublie) return;
+
+  const panels = {
+    cre: panelCreation,
+    con: panelConnexion,
+    ouv: panelOublie,
   };
 
-  const getConnexionData = () => {
-    const root = formConnexion;
-    return {
-      email:    root?.querySelector('input[name="email"], #email')?.value?.trim(),
-      password: root?.querySelector('input[name="password"], #password')?.value
-    };
-  };
-
-  // === CRÉATION DE COMPTE ===
-  if (formCreation) {
-    formCreation.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const { nom, email, password } = getCreationData();
-      if (!nom || !email || !password) {
-        alert("Merci de remplir nom, email et mot de passe.");
-        return;
-      }
-
-      alert("Compte créé (simulation).");
-      window.location.href = "./profil-user.html";
-    });
+  // Ferme tout
+  function hideAll() {
+    for (const p of Object.values(panels)) p.style.display = "none";
   }
 
-  // === CONNEXION ===
-  if (formConnexion) {
-    formConnexion.addEventListener("submit", (e) => {
-      e.preventDefault();
+  // État courant (null = rien d'ouvert)
+  let openKey = null;
 
-      const { email, password } = getConnexionData();
-      if (!email || !password) {
-        alert("Merci d’entrer email et mot de passe.");
-        return;
-      }
-
-      // Simulation
-      localStorage.setItem("token", "FAUX_TOKEN_DE_TEST");
-      alert("Connexion réussie (simulation).");
-      window.location.href = "./index.html";
-    });
+  // Ouvre/ferme selon la clé ("cre" | "con" | "ouv")
+  function togglePanel(key) {
+    if (openKey === key) {
+      // Re-clic sur le même bouton -> tout fermer
+      hideAll();
+      openKey = null;
+      return;
+    }
+    // Ouvre le demandé, ferme le reste
+    hideAll();
+    panels[key].style.display = "block";
+    openKey = key;
   }
 
-  console.log("[forms] JS chargé.");
+  // État initial : tout fermé
+  hideAll();
+
+  // Listeners (only if the button exists)
+  if (btnCreation)  btnCreation.addEventListener("click",  () => togglePanel("cre"));
+  if (btnConnexion) btnConnexion.addEventListener("click", () => togglePanel("con"));
+  if (btnOublie)    btnOublie.addEventListener("click",   () => togglePanel("ouv"));
 });
-
-const user = JSON.parse(sessionStorage.getItem("user"));
-
-if (user && user.role === "admin") {
-    console.log("Bienvenue admin !");
-} else {
-    console.log("Utilisateur standard ou non connecté");
-}

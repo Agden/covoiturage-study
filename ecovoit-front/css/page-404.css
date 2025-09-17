@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    background-image: url(/ecovoit-front/img/fond-404-mobile-2.png);
+    background-image: url(../img/fond-404-mobile-2.png);
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@ body a {
 
 @media screen and (min-width: 1024px) {
     body {
-        background-image: url(/ecovoit-front/img/fond-404.png);
+        background-image: url(../img/fond-404.png);
         background-size: cover;
         background-position: center bottom;
         background-repeat: no-repeat;

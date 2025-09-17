@@ -184,38 +184,38 @@ document.addEventListener("DOMContentLoaded", () => {
   {
     conducteur: "Maxence D.",
     note: "⭐️⭐️⭐️⭐️⭐️",
-    profil: "/ecovoit-front/img/photo-profil-1.jpg",
+    profil: "../img/photo-profil-1.jpg",
     places: 2,
     prix: 27.5,
     eco: true,
     heureDepart: "14h30",
     heureArrivee: "19h00",
     date: "24/07/2025",
-    lien: "/ecovoit-front/html/fiche-profil-1.html"
+    lien: "../html/fiche-profil-1.html"
   },
   {
     conducteur: "Gauthier R.",
     note: "⭐️⭐️⭐️⭐️",
-    profil: "/ecovoit-front/img/photo-profil-2.jpg",
+    profil: "../img/photo-profil-2.jpg",
     places: 1,
     prix: 30,
     eco: false,
     heureDepart: "13h00",
     heureArrivee: "17h45",
     date: "24/07/2025",
-    lien: "/ecovoit-front/html/fiche-profil-2.html"
+    lien: "../html/fiche-profil-2.html"
   },
   {
     conducteur: "Julie L.",
     note: "⭐️⭐️⭐️⭐️",
-    profil: "/ecovoit-front/img/photo-profil-3.jpg",
+    profil: "../img/photo-profil-3.jpg",
     places: 3,
     prix: 26,
     eco: true,
     heureDepart: "17h45",
     heureArrivee: "22h00",
     date: "24/07/2025",
-    lien: "/ecovoit-front/html/fiche-profil-3.html"
+    lien: "../html/fiche-profil-3.html"
   }
 ];
 
@@ -249,10 +249,3 @@ zoneResultats.innerHTML = html;
   });
 });
 
-const user = JSON.parse(sessionStorage.getItem("user"));
-
-if (user && user.role === "admin") {
-    console.log("Bienvenue admin !");
-} else {
-    console.log("Utilisateur standard ou non connecté");
-}
