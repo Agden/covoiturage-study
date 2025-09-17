@@ -150,7 +150,9 @@
                                             <option value="5">Espagnol</option>
                                         </select>
                                     </div>
-                                    <button type="submit" class="submit-creation">C'est parti !</button>
+                                    <button type="submit" class="submit-creation" formmethod="get" formaction="../index.html"> C'est parti !
+                                    </button>
+
                                 </form>
                             </div>
 
@@ -161,7 +163,8 @@
                                 <form action="../html/profil-user.html" method="post">
                                     <input type="email" id="email-connexion" name="email" class="form-control" placeholder="Email" required>
                                     <input type="password" id="password-connexion" name="password" class="form-control" placeholder="Mot de passe" required>
-                                    <button type="submit" class="submit-connexion">Se connecter</button>
+                                    <button type="submit" class="submit-connexion" formmethod="get" formaction="./profil-user.html"> Se connecter
+                                    </button>
                                 </form>
                                 <!-- Bouton MDP oublié dans la section connexion -->
                                 <button id="oublie-mdp" class="oublie-mdp">Mot de passe oublié ?</button>
